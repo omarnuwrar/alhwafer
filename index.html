@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>شركة الحوافر الذهبية - استيراد المعدات الزراعية وقطع الغيار</title>
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========== RESET & BASE STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2d5016;
+            --secondary-color: #4a7c2c;
+            --accent-color: #f59e0b;
+            --dark-green: #1a3a0f;
+            --light-green: #e8f5e0;
+            --gold: #d4af37;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            height: 100%;
+            height: -webkit-fill-available;
+        }
+
+        body {
+            font-family: 'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ========== LOADER ========== */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-logo {
+            margin-bottom: 30px;
+            animation: logoFloat 2.5s ease-in-out infinite;
+        }
+
+        .loader-logo img {
+            height: 140px;
+            width: auto;
+            filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.4));
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-25px) scale(1.05); }
+        }
+
+        .loader-spinner {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-top-color: var(--gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 25px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 22px;
+            color: var(--white);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-container img {
+            height: 65px;
+            width: auto;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .company-info h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: 900;
+            margin-bottom: 3px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-info span {
+            font-size: 13px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 17px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--gold));
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--primary-color);
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:active {
+            transform: scale(0.9);
+        }
+
+        /* ========== HERO SECTION - NEW DESIGN ========== */
+        .hero {
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-color) 50%, var(--secondary-color) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 120px 40px 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600') center/cover;
+            opacity: 0.12;
+            z-index: 0;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(74, 124, 44, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-badge i {
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .hero-badge span {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .hero-title {
+            font-size: 58px;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 900;
+            line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-title .highlight {
+            color: var(--gold);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 20px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 36px;
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), #f59e0b);
+            color: var(--dark-green);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image-main {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-main img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .hero-decorations {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            z-index: 1;
+        }
+
+        .decoration-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .decoration-circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -50px;
+            right: -50px;
+            animation-delay: 0s;
+        }
+
+        .decoration-circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: -30px;
+            left: -30px;
+            animation-delay: 1s;
+        }
+
+        .decoration-circle:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: -75px;
+            animation-delay: 2s;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+
+        /* ========== FEATURES SECTION ========== */
+        .features {
+            padding: 100px 40px;
+            background: var(--white);
+            position: relative;
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--light-green);
+            color: var(--primary-color);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .section-title .highlight {
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-description {
+            font-size: 19px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 20px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--light-green), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary-color);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-icon i {
+            font-size: 36px;
+            color: var(--white);
+        }
+
+        .feature-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-content h3 {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .feature-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-green) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800') center/cover;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+        }
+
+        .about-image-main {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .about-image-main img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .about-image-main:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: var(--white);
+            padding: 25px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .about-badge-number {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--secondary-color);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .about-badge-text {
+            font-size: 15px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .about-content h2 {
+            font-size: 46px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .about-content h2 .highlight {
+            color: var(--secondary-color);
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .about-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 20px;
+            background: var(--white);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .about-feature-item:hover {
+            border-color: var(--secondary-color);
+            transform: translateX(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .about-feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .about-feature-icon i {
+            font-size: 22px;
+            color: var(--white);
+        }
+
+        .about-feature-text h4 {
+            font-size: 19px;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .about-feature-text p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ========== PRODUCTS SECTION ========== */
+        .products {
+            padding: 100px 40px;
+            background: var(--white);
+            position: relative;
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--secondary-color);
+        }
+
+        .product-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            background: var(--light-green);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-content {
+            padding: 30px;
+        }
+
+        .product-content h3 {
+            font-size: 23px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .product-content p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .product-link:hover {
+            gap: 15px;
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, var(--light-green) 0%, var(--white) 100%);
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--gold));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--secondary-color);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--light-green), rgba(74, 124, 44, 0.2));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transform: rotateY(360deg);
+        }
+
+        .service-icon i {
+            font-size: 40px;
+            color: var(--secondary-color);
+            transition: color 0.4s ease;
+        }
+
+        .service-card:hover .service-icon i {
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ========== CONTACT SECTION ========== */
+        .contact {
+            padding: 100px 40px;
+            background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-color) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1600') center/cover;
+            opacity: 0.08;
+            z-index: 0;
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .contact-header .section-badge {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-header h2 {
+            font-size: 48px;
+            color: var(--white);
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .contact-header p {
+            font-size: 19px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 45px 35px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background: var(--white);
+        }
+
+        .contact-icon {
+            width: 85px;
+            height: 85px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: all 0.4s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1) rotate(10deg);
+            background: linear-gradient(135deg, var(--gold), #f59e0b);
+        }
+
+        .contact-icon i {
+            font-size: 38px;
+            color: var(--white);
+        }
+
+        .contact-card h3 {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .contact-card p {
+            font-size: 17px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-card a:hover {
+            color: var(--gold);
+            transform: translateX(-5px);
+        }
+
+        .contact-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact-cta .btn {
+            font-size: 19px;
+            padding: 18px 45px;
+        }
+
+        /* ========== MAP SECTION ========== */
+        .map-section {
+            padding: 0;
+            background: var(--light-green);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(20%);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: linear-gradient(180deg, #0f1419 0%, #1a202c 100%);
+            color: #e2e8f0;
+            padding: 80px 40px 30px;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            font-size: 22px;
+            color: var(--white);
+            margin-bottom: 25px;
+            font-weight: 800;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        /* Fix for phone numbers direction */
+        .footer-contact-item a[href^="tel"],
+        .contact-card a[href^="tel"] {
+            direction: ltr;
+            display: inline-block;
+            unicode-bidi: embed;
+                 }
+
+        .footer-contact-item div,
+        .contact-card p {
+              direction: rtl;
+                 }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            border-radius: 2px;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-logo-text {
+            font-size: 24px;
+            color: var(--white);
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .footer-description {
+            font-size: 16px;
+            color: #cbd5e0;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 22px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--gold));
+            transform: translateY(-5px) rotate(5deg);
+            border-color: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(-5px);
+        }
+
+        .footer-links a:hover i {
+            transform: translateX(-3px);
+        }
+
+        .footer-contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .footer-contact-item i {
+            font-size: 20px;
+            color: var(--gold);
+            margin-top: 3px;
+        }
+
+        .footer-contact-item a {
+            color: #cbd5e0;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 16px;
+            color: #a0aec0;
+            line-height: 1.6;
+        }
+
+        .footer-bottom a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--white);
+        }
+
+        /* ========== WHATSAPP FLOAT BUTTON ========== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+        }
+
+        .whatsapp-float a {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 34px;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: whatsappPulse 2s infinite;
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% {
+                box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 8px 40px rgba(37, 211, 102, 0.7);
+                transform: scale(1.05);
+            }
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 12px 45px rgba(37, 211, 102, 0.7);
+        }
+
+        /* ========== SCROLL TO TOP BUTTON ========== */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 22px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: linear-gradient(135deg, var(--gold), #f59e0b);
+            transform: translateY(-8px) rotate(10deg);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+        }
+
+        /* ========== FADE IN ANIMATION ========== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 1;
+            }
+
+            .hero-image {
+                order: 2;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            nav {
+                padding: 0 25px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 75%;
+                max-width: 350px;
+                height: 100vh;
+                height: -webkit-fill-available;
+                background: var(--white);
+                flex-direction: column;
+                gap: 0;
+                padding: 100px 30px 30px;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+                transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                padding: 18px 0;
+                border-bottom: 1px solid #e5e7eb;
+            }
+
+            .nav-links a {
+                font-size: 19px;
+                display: block;
+                width: 100%;
+            }
+
+            .nav-links a::before {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 100px 25px 50px;
+            }
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-subtitle {
+                font-size: 20px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .features,
+            .about,
+            .products,
+            .services,
+            .contact {
+                padding: 70px 25px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 25px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .company-info h1 {
+                font-size: 18px;
+            }
+
+            .company-info span {
+                font-size: 11px;
+            }
+
+            .logo-container img {
+                height: 50px;
+            }
+
+            .hero {
+                min-height: 100vh;
+                min-height: -webkit-fill-available;
+                padding: 90px 20px 40px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .section-description {
+                font-size: 16px;
+            }
+
+            .feature-card {
+                padding: 35px 25px;
+            }
+
+            .about-content h2 {
+                font-size: 32px;
+            }
+
+            .about-content p {
+                font-size: 16px;
+            }
+
+            .about-image-main img {
+                height: 400px;
+            }
+
+            .product-image {
+                height: 240px;
+            }
+
+            .product-content {
+                padding: 25px;
+            }
+
+            .service-card {
+                padding: 35px 25px;
+            }
+
+            .contact-header h2 {
+                font-size: 36px;
+            }
+
+            .contact-card {
+                padding: 35px 25px;
+            }
+
+            .map-container {
+                height: 350px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .whatsapp-float a {
+                width: 58px;
+                height: 58px;
+                font-size: 30px;
+            }
+
+            .scroll-top {
+                bottom: 90px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .loader-logo img {
+                height: 100px;
+            }
+
+            .loader-text {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .company-info h1 {
+                font-size: 15px;
+            }
+
+            .company-info span {
+                font-size: 10px;
+            }
+
+            .logo-container img {
+                height: 45px;
+            }
+
+            .hero {
+                padding: 85px 15px 35px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .about-content h2 {
+                font-size: 28px;
+            }
+
+            .contact-header h2 {
+                font-size: 30px;
+            }
+
+            .features,
+            .about,
+            .products,
+            .services,
+            .contact {
+                padding: 60px 15px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float a {
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
+            }
+
+            .scroll-top {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+                bottom: 85px;
+            }
+        }
+
+        /* ========== PRINT STYLES ========== */
+        @media print {
+            .loader,
+            .whatsapp-float,
+            .scroll-top,
+            header,
+            .hero-buttons,
+            .contact-cta {
+                display: none !important;
+            }
+        }
+
+        /* ========== ACCESSIBILITY ========== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ========== HIGH CONTRAST MODE ========== */
+        @media (prefers-contrast: high) {
+            :root {
+                --primary-color: #1a3a0f;
+                --secondary-color: #2d5016;
+                --text-light: #4a5568;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-logo">
+            <img src="images/logo.png" alt="شركة الحوافر الذهبية">
+        </div>
+        <div class="loader-spinner"></div>
+        <div class="loader-text">جاري التحميل...</div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/218912100488" target="_blank" rel="noopener noreferrer" title="تواصل معنا عبر واتساب" aria-label="تواصل عبر واتساب">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo-container">
+                <img src="images/logo.png" alt="شركة الحوافر الذهبية">
+                <div class="company-info">
+                    <h1>شركة الحوافر الذهبية</h1>
+                    <span>لاستيراد المعدات الزراعية وقطع الغيار</span>
+                </div>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle" aria-label="قائمة التنقل">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>الأفضل في ليبيا</span>
+                </div>
+                <h2 class="hero-title">
+                    شركة <span class="highlight">الحوافر الذهبية</span>
+                </h2>
+                <p class="hero-subtitle">
+                    لاستيراد المعدات الزراعية وقطع الغيار
+                </p>
+                <p class="hero-description">
+                    نحن شركة رائدة في مجال استيراد وتوزيع المعدات الزراعية الحديثة وقطع الغيار في ليبيا. نوفر أفضل الحلول الزراعية بأعلى معايير الجودة وأسعار تنافسية لخدمة القطاع الزراعي الليبي.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">
+                        <i class="fas fa-shopping-cart"></i>
+                        تصفح المنتجات
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i>
+                        تواصل معنا
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-decorations">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+                <div class="hero-image-main">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800" alt="معدات زراعية حديثة">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-award"></i>
+                    لماذا نحن
+                </div>
+                <h2 class="section-title">
+                    ما يميز <span class="highlight">شركتنا</span>
+                </h2>
+                <p class="section-description">
+                    نقدم أفضل الخدمات والمنتجات الزراعية بجودة عالية وأسعار منافسة
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>منتجات أصلية 100%</h3>
+                        <p>جميع معداتنا وقطع الغيار أصلية ومعتمدة من الشركات المصنعة العالمية مع ضمان شامل على كافة المنتجات</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>توصيل سريع</h3>
+                        <p>خدمة توصيل سريعة وآمنة لجميع أنحاء ليبيا مع فريق محترف يضمن وصول المعدات في الوقت المحدد</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>دعم فني متميز</h3>
+                        <p>فريق دعم فني متخصص متاح على مدار الساعة لتقديم الاستشارات والمساعدة الفنية اللازمة</p>
+                    </div>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>أسعار تنافسية</h3>
+                        <p>نوفر أفضل الأسعار في السوق الليبي مع عروض وخصومات مستمرة على مختلف المنتجات</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image-wrapper fade-in">
+                <div class="about-image-main">
+                    <img src="images/company.png" alt="عن الشركة">
+                </div>
+                <div class="about-badge">
+                    <div class="about-badge-number">15+</div>
+                    <div class="about-badge-text">سنة خبرة</div>
+                </div>
+            </div>
+            <div class="about-content fade-in">
+                <div class="section-badge">
+                    <i class="fas fa-info-circle"></i>
+                    من نحن
+                </div>
+                <h2>
+                    شركة <span class="highlight">الحوافر الذهبية</span><br>
+                    رائدة في المعدات الزراعية
+                </h2>
+                <p>
+                    شركة الحوافر الذهبية هي إحدى الشركات الرائدة في ليبيا في مجال استيراد وتوزيع المعدات الزراعية الحديثة وقطع الغيار. نفخر بتقديم منتجات عالية الجودة من أفضل العلامات التجارية العالمية.
+                </p>
+                <p>
+                 نسعى دائماً لتلبية احتياجات عملائنا من خلال توفير أحدث المعدات والتقنيات الزراعية، مع الحفاظ على أعلى معايير الجودة والخدمة المتميزة. نؤمن بأهمية القطاع الزراعي في ليبيا ونعمل على دعم
+                 نؤمن بأهمية القطاع الزراعي في ليبيا ونعمل على دعم المزارعين بأفضل الحلول والمعدات الحديثة.
+                </p>
+                <div class="about-features">
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="about-feature-text">
+                            <h4>خبرة واسعة</h4>
+                            <p>أكثر من 15 عاماً من الخبرة في مجال المعدات الزراعية</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="about-feature-text">
+                            <h4>ضمان شامل</h4>
+                            <p>ضمان على جميع المنتجات مع خدمة ما بعد البيع</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="about-feature-text">
+                            <h4>فريق محترف</h4>
+                            <p>فريق عمل مدرب ومؤهل لخدمتكم على أعلى مستوى</p>
+                        </div>
+                    </div>
+                    <div class="about-feature-item">
+                        <div class="about-feature-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="about-feature-text">
+                            <h4>علامات عالمية</h4>
+                            <p>نستورد من أفضل الشركات المصنعة حول العالم</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="products-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-box-open"></i>
+                    منتجاتنا
+                </div>
+                <h2 class="section-title">
+                    <span class="highlight">المعدات</span> والمنتجات الزراعية
+                </h2>
+                <p class="section-description">
+                    نوفر مجموعة واسعة من المعدات الزراعية الحديثة وقطع الغيار الأصلية
+                </p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="data:image/jpeg;base64,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" alt="جرارات زراعية">
+                        <div class="product-badge">جديد</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>جرارات زراعية حديثة</h3>
+                        <p>جرارات زراعية بأحدث التقنيات من أفضل الشركات العالمية، قوية وموفرة للوقود مع ضمان شامل</p>
+                        <a href="#contact" class="product-link">
+                            استفسر الآن
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://image.made-in-china.com/202f0j00RnYiQgfGBUUe/2025-New-Harvesting-and-Baling-Machines-Efficient-Harvesters-Machine-for-Rice-Mini.webp" alt="معدات الحصاد">
+                        <div class="product-badge">مميز</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>معدات الحصاد والدراس</h3>
+                        <p>آلات حصاد ودراس متطورة بكفاءة عالية، تساعد على زيادة الإنتاجية وتوفير الوقت والجهد</p>
+                        <a href="#contact" class="product-link">
+                            استفسر الآن
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="https://elbarima.com/wp-content/uploads/2022/05/0-194.jpg" alt="أنظمة الري">
+                        <div class="product-badge">الأكثر طلباً</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>أنظمة الري الحديثة</h3>
+                        <p>أنظمة ري متطورة وموفرة للمياه، تشمل الري بالتنقيط والرش مع أنظمة تحكم ذكية</p>
+                        <a href="#contact" class="product-link">
+                            استفسر الآن
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/replace.png" alt="قطع غيار">
+                    </div>
+                    <div class="product-content">
+                        <h3>قطع الغيار الأصلية</h3>
+                        <p>قطع غيار أصلية لجميع أنواع المعدات الزراعية، متوفرة بشكل دائم مع ضمان الجودة</p>
+                        <a href="#contact" class="product-link">
+                            استفسر الآن
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/farm.png" alt="معدات الحرث">
+                    </div>
+                    <div class="product-content">
+                        <h3>معدات الحرث والزراعة</h3>
+                        <p>محاريث ومعدات تحضير التربة بتقنيات حديثة لضمان أفضل نتائج الزراعة</p>
+                        <a href="#contact" class="product-link">
+                            استفسر الآن
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/med.png" alt="معدات التسميد">
+                    </div>
+                    <div class="product-content">
+                        <h3>معدات التسميد والرش</h3>
+                        <p>آلات تسميد ورش المبيدات بتقنيات متطورة لحماية المحاصيل وزيادة الإنتاج</p>
+                        <a href="#contact" class="product-link">
+                            استفسر الآن
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-cogs"></i>
+                    خدماتنا
+                </div>
+                <h2 class="section-title">
+                    الخدمات التي <span class="highlight">نقدمها</span>
+                </h2>
+                <p class="section-description">
+                    نوفر مجموعة شاملة من الخدمات لضمان رضا عملائنا وتلبية احتياجاتهم
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>التوصيل السريع</h3>
+                    <p>خدمة توصيل سريعة وآمنة لجميع أنحاء ليبيا مع فريق محترف ومتخصص يضمن وصول المعدات في الوقت المحدد وبحالة ممتازة</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>الصيانة والإصلاح</h3>
+                    <p>خدمات صيانة وإصلاح احترافية لجميع أنواع المعدات الزراعية بأيدي فنيين مؤهلين ومدربين على أعلى مستوى</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>استشارات فنية</h3>
+                    <p>نقدم استشارات فنية مجانية لمساعدتك في اختيار المعدات المناسبة لاحتياجاتك الزراعية الخاصة</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>التدريب والتأهيل</h3>
+                    <p>برامج تدريبية متخصصة لتشغيل وصيانة المعدات الزراعية الحديثة بشكل صحيح وآمن</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>الضمان الشامل</h3>
+                    <p>ضمان شامل على جميع المنتجات مع خدمة ما بعد البيع المتميزة لراحة بالك وثقتك</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3>عروض خاصة</h3>
+                    <p>عروض وخصومات مستمرة على مختلف المنتجات لعملائنا الكرام على مدار العام</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-header">
+                <div class="section-badge">
+                    <i class="fas fa-phone-alt"></i>
+                    تواصل معنا
+                </div>
+                <h2>نحن هنا <span style="color: var(--gold);">لخدمتك</span></h2>
+                <p>تواصل معنا الآن للحصول على أفضل العروض والخدمات</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>اتصل بنا</h3>
+                    <p>
+                        <a href="tel:+218912100488">091 210 04 88</a><br>
+                        <a href="tel:+218912135727">091 213 57 27</a><br>
+                        <a href="tel:+218515214319">051 521 43 19</a>
+                    </p>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>
+                        <a href="mailto:mostaffa2007@yahoo.com">mostaffa2007@yahoo.com</a>
+                    </p>
+                </div>
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>الموقع</h3>
+                    <p>
+                        الطريق الساحلي - النعيمة<br>
+                        زليتن - ليبيا
+                    </p>
+                </div>
+            </div>
+            <div class="contact-cta">
+                <a href="https://wa.me/218912100488" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل عبر واتساب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.8234567890123!2d14.5676823!3d32.4696759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDI4JzEwLjgiTiAxNMKwMzQnMDMuNiJF!5e0!3m2!1sar!2sly!4v1234567890123!5m2!1sar!2sly"
+                width="600"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="موقع شركة الحوافر الذهبية">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section footer-logo-section">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="شركة الحوافر الذهبية">
+                    <div class="footer-logo-text">الحوافر الذهبية</div>
+                </div>
+                <p class="footer-description">
+                    شركة رائدة في مجال استيراد وتوزيع المعدات الزراعية الحديثة وقطع الغيار في ليبيا. نسعى لتقديم أفضل الحلول الزراعية بأعلى معايير الجودة.
+                </p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" title="فيسبوك" aria-label="فيسبوك">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/218912100488" target="_blank" rel="noopener noreferrer" title="واتساب" aria-label="واتساب">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="انستغرام" aria-label="انستغرام">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:mostaffa2007@yahoo.com" title="البريد الإلكتروني" aria-label="البريد الإلكتروني">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-left"></i> من نحن</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-left"></i> المنتجات</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-left"></i> الخدمات</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-left"></i> اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>منتجاتنا</h3>
+                <ul class="footer-links">
+                    <li><a href="#products"><i class="fas fa-chevron-left"></i> جرارات زراعية</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-left"></i> معدات الحصاد</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-left"></i> أنظمة الري</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-left"></i> قطع الغيار</a></li>
+                    <li><a href="#products"><i class="fas fa-chevron-left"></i> معدات الحرث</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>معلومات الاتصال</h3>
+                <div class="footer-contact-info">
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <a href="tel:+218912100488">091 210 04 88</a><br>
+                            <a href="tel:+218912135727">091 213 57 27</a><br>
+                            <a href="tel:+218515214319">051 521 43 19</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <a href="mailto:mostaffa2007@yahoo.com">mostaffa2007@yahoo.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            الطريق الساحلي - النعيمة<br>
+                            زليتن - ليبيا
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 <a href="#home">شركة الحوافر الذهبية</a>. جميع الحقوق محفوظة | تصميم وتطوير بواسطة فريق التطوير</p>
+        </div>
+    </footer>
+
+    <script>
+        // ========== LOADER ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.fonts) {
+                document.fonts.ready.then(function() {
+                    setTimeout(function() {
+                        document.getElementById('loader').classList.add('hidden');
+                    }, 800);
+                });
+            } else {
+                setTimeout(function() {
+                    document.getElementById('loader').classList.add('hidden');
+                }, 1500);
+            }
+        });
+
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+
+        // ========== MOBILE MENU ==========
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                body.style.overflow = 'hidden';
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                body.style.overflow = '';
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                body.style.overflow = '';
+            }
+        });
+
+        // ========== HEADER SCROLL EFFECT ==========
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // ========== SCROLL TO TOP BUTTON ==========
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 400) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ========== SMOOTH SCROLLING ==========
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ========== FADE IN ANIMATION ==========
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -80px 0px'
+        });
+
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+
+        // ========== ACTIVE NAV LINK ==========
+        const sections = document.querySelectorAll('section[id]');
+        const navLinksItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinksItems.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ========== IMAGE LOADING ==========
+        document.querySelectorAll('img').forEach(img => {
+            img.style.transition = 'opacity 0.6s ease';
+
+            if (img.complete && img.naturalHeight !== 0) {
+                img.style.opacity = '1';
+            } else {
+                img.style.opacity = '0';
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+
+                img.addEventListener('error', function() {
+                    this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300"%3E%3Crect fill="%23f0f0f0" width="400" height="300"/%3E%3Ctext fill="%23999" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-family="Arial"%3Eالصورة غير متوفرة%3C/text%3E%3C/svg%3E';
+                    this.style.objectFit = 'contain';
+                    this.style.opacity = '1';
+                });
+
+                setTimeout(() => {
+                    img.style.opacity = '1';
+                }, 2500);
+            }
+        });
+
+        // ========== PERFORMANCE OPTIMIZATION ==========
+        let ticking = false;
+
+        function requestTick(callback) {
+            if (!ticking) {
+                window.requestAnimationFrame(callback);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            requestTick(function() {
+                ticking = false;
+            });
+        });
+
+        // ========== CONSOLE MESSAGE ==========
+        console.log('%c شركة الحوافر الذهبية ', 'background: #2d5016; color: white; font-size: 24px; padding: 12px; font-weight: bold;');
+        console.log('%c لاستيراد المعدات الزراعية وقطع الغيار ', 'background: #4a7c2c; color: white; font-size: 18px; padding: 10px;');
+        console.log('%c 📞 091 210 04 88 | 091 213 57 27 | 051 521 43 19 ', 'background: #d4af37; color: #1a3a0f; font-size: 16px; padding: 8px; font-weight: bold;');
+
+        // ========== PREVENT CONTEXT MENU (OPTIONAL) ==========
+        // Uncomment if you want to disable right-click
+        // document.addEventListener('contextmenu', function(e) {
+        //     e.preventDefault();
+        // });
+
+        // ========== LAZY LOADING ENHANCEMENT ==========
+        if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.src = img.dataset.src || img.src;
+            });
+        } else {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+        }
+
+        // ========== VIEWPORT HEIGHT FIX FOR MOBILE ==========
+        function setVH() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setVH();
+        window.addEventListener('resize', setVH);
+        window.addEventListener('orientationchange', setVH);
+
+        // ========== TOUCH DEVICE DETECTION ==========
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+            document.body.classList.add('touch-device');
+        }
+    </script>
+</body>
+</html>
